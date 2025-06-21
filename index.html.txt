@@ -1,0 +1,31 @@
+```html
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مطعم بروستيلا</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #fff8f0; color: #333; text-align: center; padding: 50px; }
+    h1 { color: #d83a3a; }
+    .menu { margin-top: 30px; }
+    .item { margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>أهلاً بكم في بروستيلا</h1>
+  <p>أطيب بروست في المدينة!</p>
+
+  <div class="menu">
+    <h2>المنيو</h2>
+    <div class="item">4 قطع بروست عادي / حراق - 18 ريال</div>
+    <div class="item">2 قطعة بروست عادي / حراق - 10 ريال</div>
+    <div class="item">10 قطع مسحب - 17 ريال</div>
+    <div class="item">برجر زنجر - 10 ريال</div>
+    <div class="item">برجر عادي - 7 ريال</div>
+    <div class="item">برجر لحم - 10 ريال</div>
+    <div class="item">بيبسي - 2.5 ريال | وسط - 5 ريال | كبير - 10 ريال</div>
+  </div>
+</body>
+</html>
+```
