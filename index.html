@@ -28,4 +28,110 @@
   </div>
 </body>
 </html>
+
+
+```html
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>طلب بروستيلا</title>
+<style>
+  body { font-family: Arial, sans-serif; direction: rtl; padding: 20px; background: #fff8e1; color: #333; }
+  h1 { color: #d84315; }
+  label { display: block; margin-top: 15px; font-weight: bold; }
+  select, input[type=number] { width: 100%; padding: 8px; margin-top: 5px; }
+  button { margin-top: 20px; background-color: #ff5722; color: white; padding: 10px; border: none; width: 100%; font-size: 16px; cursor: pointer; }
+  button:hover { background-color: #e64a19; }
+  .total { margin-top: 20px; font-size: 18px; font-weight: bold; color: #d84315; }
+</style>
+</head>
+<body>
+<h1>طلب بروستيلا</h1>
+
+<form id="orderForm">
+  <label for="item">اختر الصنف:</label>
+  <select id="item" name="item" required>
+    <option value="" disabled selected>اختر</option>
+    <option value="4 قطع عادي" data-price="18">4 قطع بروست عادي - 18﷼</option>
+    <option value="4 قطع حراق" data-price="18">4 قطع بروست حراق - 18﷼</option>
+    <option value="2 قطع عادي" data-price="10">2 قطع بروست عادي - 10﷼</option>
+<option value="2 قطع حراق" data-price="10">2 قطع بروست حراق - 10﷼</option>
+    <option value="10 قطع مسحب عادي" data-price="17">10 قطع مسحب عادي - 17﷼</option>
+    <option value="10 قطع مسحب حراق" data-price="17">10 قطع مسحب حراق - 17﷼</option>
+    <option value="برجر زنجر" data-price="10">برجر زنجر - 10﷼</option>
+    <option value="برجر عادي" data-price="7">برجر عادي - 7﷼</option>
+    <option value="برجر لحم" data-price="10">برجر لحم - 10﷼</option>
+  </select>
+
+  <label for="quantity">الكمية:</label>
+  <input type="number" id="quantity" name="quantity" min="1" value="1" required />
+
+  <label for="delivery">طريقة الطلب:</label>
+  <select id="delivery" name="delivery" required>
+    <option value="" disabled selected>اختر</option>
+    <option value="توصيل">توصيل</option>
+    <option value="استلام من المطعم">استلام من المطعم</option>
+  </select>
+
+  <button type="button" onclick="calculateTotal()">احسب السعر الإجمالي</button>
+
+  <div class="total" id="totalPrice"></div>
+
+  <button type="submit">إرسال الطلب</button>
+</form>
+
+<script>
+  function calculateTotal() {
+    const itemSelect = document.getElementById('item');
+    const quantityInput = document.getElementById('quantity');
+    const totalDiv = document.getElementById('totalPrice');
+const selectedOption = itemSelect.options[itemSelect.selectedIndex];
+    if (!selectedOption || !quantityInput.value) {
+      totalDiv.textContent = 'يرجى اختيار الصنف والكمية';
+      return;
+    }
+
+    const price = parseFloat(selectedOption.getAttribute('data-price'));
+    const quantity = parseInt(quantityInput.value);
+
+    if (quantity < 1) {
+      totalDiv.textContent = 'الكمية يجب أن تكون على الأقل 1';
+      return;
+    }
+
+    const total = price * quantity;
+    totalDiv.textContent = `السعر الإجمالي: total.toFixed(2) ﷼`;
+  
+
+  document.getElementById('orderForm').addEventListener('submit', function(e) 
+    e.preventDefault();
+
+    const item = document.getElementById('item').value;
+    const quantity = document.getElementById('quantity').value;
+    const delivery = document.getElementById('delivery').value;
+    const totalText = document.getElementById('totalPrice').textContent;
+
+    if (!item || !quantity || !delivery) 
+      alert('يرجى تعبئة جميع الحقول');
+      return;
+    
+
+    if (!totalText.startsWith('السعر الإجمالي')) 
+      alert('يرجى حساب السعر الإجمالي أولاً');
+      return;
+    
+
+    alert(`تم استلام طلبك::{item}\nالكمية: quantity الطلب:{delivery}\n${totalText}\n\nشكراً لطلبك من بروستيلا!`);
+    
+    this.reset();
+document.getElementById('totalPrice').textContent = '';
+  });
+</script>
+</body>
+</html>
+```
+
+
 ```
