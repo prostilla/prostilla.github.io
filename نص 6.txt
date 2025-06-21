@@ -1,0 +1,30 @@
+const burgerLahmCount = parseInt(document.getElementById('burgerLahm').value);
+    if (burgerLahmCount > 0) items.push(`برجر لحم × burgerLahmCount ={burgerLahmCount*10} ريال`);
+    const drink = document.getElementById('drink').value;
+    if (drink !== '0') items.push(`مشروب: drink`);
+    const delivery = document.getElementById('delivery').value;
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    if (!delivery || !name || !phone) 
+      alert('يرجى تعبئة جميع الحقول المطلوبة');
+      return;
+    
+
+    let message = `طلب جديد من{name}%0A`;
+    message += `رقم الجوال: phone
+    message += `طريقة الاستلام:{delivery}%0A`;
+    message += `الأصناف:%0Aitems.join('
+
+    const whatsappURL = `https://wa.me/966538847862?text={message}`;
+    window.open(whatsappURL, '_blank');
+  });
+</script>
+
+</body>
+</html>
+```
+
+غير رقم جوال المطعم في الرابط (966538847862) لرقمك الصحيح.  
+
+لو حابب أرسل لك الملف مضغوط جاهز، قولي!
